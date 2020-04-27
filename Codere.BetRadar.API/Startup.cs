@@ -39,7 +39,7 @@ namespace Codere.BetRadar
                 options.SerializerSettings.ContractResolver = new DefaultContractResolver());
 
             services
-                .ConfigureSupervisor()
+                .ConfigureService()
                 .AddMiddleware()
                 .AddCorsConfiguration()
                 .AddMvc(option => option.EnableEndpointRouting = false);

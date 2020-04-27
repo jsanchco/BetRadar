@@ -11,7 +11,7 @@
 
     public static class ServicesConfiguration
     {
-        public static IServiceCollection ConfigureSupervisor(this IServiceCollection services)
+        public static IServiceCollection ConfigureService(this IServiceCollection services)
         {
             services.AddScoped<IServiceEvents, ServiceEventsBetRadar>();
 
