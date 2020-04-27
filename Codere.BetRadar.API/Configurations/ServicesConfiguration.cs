@@ -17,6 +17,7 @@
 
             return services; 
         }
+
         public static IServiceCollection AddMiddleware(this IServiceCollection services)
         {
             services.AddMvc().AddNewtonsoftJson(options =>
