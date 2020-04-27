@@ -15,7 +15,7 @@
         {
             services.AddScoped<IServiceEvents, ServiceEventsBetRadar>();
 
-            return services;
+            return services; 
         }
         public static IServiceCollection AddMiddleware(this IServiceCollection services)
         {

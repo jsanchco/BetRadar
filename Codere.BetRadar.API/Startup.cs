@@ -38,7 +38,7 @@ namespace Codere.BetRadar
             services.AddMvc().AddNewtonsoftJson(options =>
                 options.SerializerSettings.ContractResolver = new DefaultContractResolver());
 
-            services
+            services 
                 .ConfigureService()
                 .AddMiddleware()
                 .AddCorsConfiguration()
