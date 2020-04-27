@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codere.BetRadar.API", "Codere.BetRadar.API\Codere.BetRadar.API.csproj", "{4D873B45-D3B1-4183-8C25-469B3403BDB6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Codere.BetRadar.Domain", "Codere.BetRadar.Domain\Codere.BetRadar.Domain.csproj", "{D1E98C2D-5F79-40B6-AD11-98981AF2D5B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Codere.BetRadar.ServiceEventsBetRadar", "Codere.BetRadar.ServiceEventsBetRadar\Codere.BetRadar.ServiceEventsBetRadar.csproj", "{9BF098E3-07E1-4F38-9E0B-4F15EB7390EB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4D873B45-D3B1-4183-8C25-469B3403BDB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D873B45-D3B1-4183-8C25-469B3403BDB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D873B45-D3B1-4183-8C25-469B3403BDB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D873B45-D3B1-4183-8C25-469B3403BDB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1E98C2D-5F79-40B6-AD11-98981AF2D5B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1E98C2D-5F79-40B6-AD11-98981AF2D5B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1E98C2D-5F79-40B6-AD11-98981AF2D5B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1E98C2D-5F79-40B6-AD11-98981AF2D5B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BF098E3-07E1-4F38-9E0B-4F15EB7390EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BF098E3-07E1-4F38-9E0B-4F15EB7390EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BF098E3-07E1-4F38-9E0B-4F15EB7390EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BF098E3-07E1-4F38-9E0B-4F15EB7390EB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F9B82E0E-4528-4D18-90E6-8AA77EDB6758}
+	EndGlobalSection
+EndGlobal
