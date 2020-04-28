@@ -3,12 +3,13 @@
     #region Using
 
     using Codere.BetRadar.Domain.Entities;
+    using System.Threading.Tasks;
 
     #endregion
 
     public interface IServiceEvents
     {
-        ListEvents GetEvents();
-        Event GetEvent(int eventId);
+        Task<ListEvents> GetEvents();
+        Task<Event> GetEvent(int eventId);
     }
 }
