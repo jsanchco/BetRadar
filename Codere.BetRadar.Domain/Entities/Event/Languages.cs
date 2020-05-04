@@ -7,9 +7,9 @@
 
     #endregion
 
-    public class ListEvents
+    public class Languages
     {
-        public DateTime StartFetch { get; set; }
-        public List<Event> Events { get; set; }
+            public string id { get; set; }
+            public string name { get; set; }
     }
 }
