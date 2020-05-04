@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <script src="https://avplayer-cdn.sportradar.com/dist/latest/avvpl-player.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://avplayer-cdn.sportradar.com/dist/latest/styles.css" />
+
+    <title>Test Media</title>
+    <style>
+        #playercontainer {
+            position: relative;
+            /* width: 100%;
+        height: 100%; */
+            /* border: 1px solid black; */
+        }
+        
+        #playercontainer1 {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-group form-inline" style="margin: 30px;">
+        <label for="urlMedia">URL Service</label>
+        <input type="text" class="form-control" id="urlService" placeholder="url service" style="margin: 20px; width: 500px;" />
+        <button id="submit-form-load" class="btn btn-primary">Load</button>
+    </div>
+
+    <!-- <div id="information" style="margin: 30px;">&nbsp;</div> -->
+
+    <div>
+        <div class="card bg-light mb-3" style="margin: 30px;">
+            <div class="card-header" id="header-list-medias">List Medias</div>
+
+            <div class="card-body">
+                <table id="table-medias" class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col" style="width: 10%;">id</th>
+                            <th scope="col" style="width: 10%;">eventId</th>
+                            <th scope="col" style="width: 10%;">streamId</th>
+                            <th scope="col" style="width: 10%;">format</th>
+                            <th scope="col" style="width: 10%;">URL</th>                           
+                            <th scope="col" style="width: 10%;">Last Play JWP</th>
+                            <th scope="col" style="width: 10%;">Status JWP</th>
+                            <th scope="col" style="width: 10%;">Last Play AVVP</th>
+                            <th scope="col" style="width: 10%;">Status AVVP</th>
+                            <th scope="col" style="width: 10%;">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="card bg-light mb-3" style="margin: 30px;">
+            <div class="card-header">View Media</div>
+            <div class="card-body">
+                <div style="display: flex;">
+                    <div style="width: 50%; text-align: center;">
+                        jw-player
+                    </div>
+
+                    <div style="width: 50%; text-align: center;">
+                        avvp-player
+                    </div>
+                </div>
+
+                <div style="display: flex;">
+                    <div style="width: 50%; margin: 30px;">
+                        <div id="player"></div>
+                    </div>
+
+                    <div id="playercontainer" style="width: 50%; margin: 30px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdn.jwplayer.com/libraries/lqsWlr4Z.js"></script>
+    <script src="./js/testMedia1.js"></script>
+    <script src="./js/data.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var data = new Data();
+
+            var testMedia = new TestMedia1(data.getData());
+            testMedia.init();
+        });
+    </script>
+</body>
+
+</html>
