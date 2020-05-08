@@ -241,6 +241,73 @@
             }
         }
 
+        public async Task<ResponseStreamingInfo> GetStreamingInfo(string idEvent, bool isMovil)
+        {
+            try
+            {
+                ResponseStreamingInfo response = new ResponseStreamingInfo();      
+
+                var httpClient = GetClientHttp();
+                string parameters = $"/av:event: {idEvent}";
+                string url = string.Concat(Constants.ApiEvents, parameters);
+                var httpResponseMessage = await httpClient.GetAsync(url);
+
+                int IdStreamStatus = (int)StreamStatusEnum.OnAirBroadcast;
+                string StreamStatus = $"av:stream_status:{IdStreamStatus}";
+
+                bool isLive = false;
+
+                if (httpResponseMessage.IsSuccessStatusCode)
+                {
+                    var content = await httpResponseMessage.Content.ReadAsStringAsync();
+                    Event model = JsonSerializer.Deserialize<Event>(content);
+
+                    isLive = model.contents.Any(d => d.streams.Any(e => e.stream_status.id == StreamStatus));
+
+                    List<Streams> listaStreams = new List<Streams>();
+                    listaStreams = model.contents.SelectMany(a => a.streams).ToList();
+
+                    foreach (Streams streams in listaStreams)
+                    {
+                        StreamModel streamModel = new StreamModel();
+                        streamModel.UrlList = new List<KeyValuePair<string, string>>();
+                        streamModel.id = streams.id;
+
+                        foreach (string typeStream in Constants.TypesStreams)
+                        {
+                            var httpClientStream = GetClientHttp();
+                            string parametersStream = $"/{streams.id}/{typeStream}";
+                            string urlStream = string.Concat(Constants.ApiStreams, parametersStream);
+
+                            var httpResponseMessageStream = await httpClientStream.GetAsync(urlStream);
+
+                            if (httpResponseMessageStream.IsSuccessStatusCode)
+                            {
+                                var contentStream = await httpResponseMessageStream.Content.ReadAsStringAsync();
+                                Stream stream = JsonSerializer.Deserialize<Stream>(contentStream);
+
+                                string urlComplete = typeStream == "rtmp" ? string.Concat(stream.url, stream.stream_name) : stream.url;
+
+                                response.URL = urlComplete;
+                                response.IsLive = isLive;
+
+                                return response;
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    System.Diagnostics.Debug.WriteLine(httpResponseMessage.ToString());
+                }
+                return null;                          
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         #region Metodos privados 
 
         private HttpClient GetClientHttp()

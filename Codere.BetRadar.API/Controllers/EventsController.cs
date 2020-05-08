@@ -170,5 +170,26 @@
                 return StatusCode(500, ex);
             }
         }
+
+        [HttpGet("GetStreamingInfo", Name = "GetStreamingInfo")]
+        public async Task<IActionResult> GetStreamingInfo(string idEvent, bool isMovil)
+        {
+            try
+            {
+                var result = await _serviceEvents.GetStreamingInfo(idEvent, isMovil);
+
+                if (result == null)
+                {
+                    return NotFound();
+                }
+                return Ok(result);
+
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Exception: ");
+                return StatusCode(500, ex);
+            }
+        }
     }
 }

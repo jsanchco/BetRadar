@@ -1,5 +1,5 @@
 ﻿namespace Codere.BetRadar.Domain.Services
-{   
+{
     #region Using
 
     using Codere.BetRadar.Domain.Entities;
@@ -18,5 +18,6 @@
         Task<Stream> GetStream(string stream_id, string stream_type);
         Task<ListEvents> GetEventsByStreamStatus(Nullable<int> IdStreamStatus);
         Task<ResponseUrlModel> GetAllStream();
+        Task<ResponseStreamingInfo> GetStreamingInfo(string idEvent, bool isMovil);
     }
 }
